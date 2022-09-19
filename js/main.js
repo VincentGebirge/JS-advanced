@@ -75,6 +75,10 @@ class Cart {
   };
 }
 
+/**
+ * Функция вычисляет общую стоимость товаров
+ * @returns {any}
+ */
 GoodsList(){
   let sum = 0;
   this.goods.forEach(item => {
