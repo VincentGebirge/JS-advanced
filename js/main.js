@@ -19,21 +19,20 @@ class ProductList{
   }
   
   render(){
-      const block = document.querySelector(this.container);
-      for(let product of this.goods){
-           const item = new ProductItem(product);
-           block.insertAdjacentHTML("beforeend",item.render());
-//              block.innerHTML += item.render();
-      }
+    const block = document.querySelector(this.container);
+    for(let product of this.goods){
+      const item = new ProductItem(product);
+      block.insertAdjacentHTML("beforeend",item.render());
+    }
   }
 }
 
 class ProductItem{
   constructor(product,image){
-      this.title = product.title;
-      this.id = product.id;
-      this.price = product.price;
-      this.image = product.image;
+    this.title = product.title;
+    this.id = product.id;
+    this.price = product.price;
+    this.image = product.image;
   }
   render(){
          return `<div class="product-item">
@@ -75,6 +74,13 @@ class Cart {
 
   };
 }
+
+GoodsList(){
+  let sum = 0;
+  this.goods.forEach(item => {
+    sum += item.price;
+  })
+};
 
 
 
