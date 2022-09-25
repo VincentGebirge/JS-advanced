@@ -1,6 +1,8 @@
 // Добавляем товар в корзину из API
 const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
+
+//Класс карточки продукта, получаемый из API файла json
 class ProductsList {
   constructor(container = '.products') {
       this.container = container;
@@ -12,7 +14,7 @@ class ProductsList {
               this.render()
           });
   }
-  
+  //Получаем массив объектов из файла json и делаем рендер
   _getProducts() {
       return fetch(`${API}/catalogData.json`)
           .then(result => result.json())
@@ -34,7 +36,7 @@ class ProductsList {
   }
 }
 
-
+// Добавляем полученные объекты в разметку страницы
 class ProductItem {
   constructor(product, img = 'https://img.freepik.com/premium-vector/online-shop-logo-designs-concept-vector-online-store-logo-designs_7649-661.jpg?w=826') {
       this.title = product.product_name;
@@ -61,7 +63,7 @@ let list = new ProductsList();
 
 
 
-
+// Класс корзины, в котором перебираем массик из json и добавляем объекты в корзину
 class basket {
   constructor(container = '.basket') {
       this.container = container;
@@ -122,6 +124,16 @@ class BasketItem {
 }
 
 let bask = new basket();
+
+
+
+
+
+
+
+
+
+
 
 // class Item{
 //   constructor(el, img = 'https://placehold.it/200x150'){
